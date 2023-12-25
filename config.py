@@ -51,12 +51,20 @@ class Text(object):
 Get Photo or Under 5MB Video's Links From Graph.org. and it's Save Also Text.
 
 --How to Upload Text in graph.org--
-Give Your Text With or Without HTML Format | Give Your Title
+Give Your Text With or Without HTML Format | Give Your Title.
+Example :- We're Creating New Bots For Free | Star Bots Tamil
 
 --HTML Formats--
+Bold :- <b>**Bold Text**</b>
+Italic :- <i>_Italic Text_</i>
+Mono :- <code>`Monospace Text`</code>
+Strikethrough :- <s>~~Strikethrough Text~~</s>
+Quote :- <blockquote>>Quote Text</blockquote>
+Underline :- <u>__Underlined Text__</u>
+[Create Link](https://t.me/Star_Bots_Tamil) :- <a href='https://t.me/Star_Bots_Tamil'>Star Bots Tamil</a>
+Regular Text :-** Star Bots Tamil
 
-
-⚠️ Contact For Any Problem :- [👥 Support Group](https://t.me/Star_Bots_Tamil_Support)**"""
+**⚠️ Contact For Any Problem :- [👥 Support Group](https://t.me/Star_Bots_Tamil_Support)**"""
 
     DEV_TEXT = """<b><u>Special Thanks & Developer</b></u>
 **You Can pay Any Our Bot's Repo. If you're able to Donate or Buy Our Bot's Repo, please Consider using these Methods:
