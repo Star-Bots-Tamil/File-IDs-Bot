@@ -33,7 +33,7 @@ async def direct_upload(bot, update):
     )
 
 telegraph = Telegraph()
-telegraph.create_account(short_name='Graph Bots Tamil')
+telegraph.create_account(short_name='Graph Star Bots')
 
 @Client.on_message(filters.text & filters.private)
 async def text_handler(bot, message):
@@ -58,7 +58,14 @@ async def text_handler(bot, message):
             print(e)
             return
 
-        await message.reply_text(f"**https://telegra.ph/{page['path']}**")
+        await message.edit_text(
+            text=f"<b>Your Text Link :-</b>\n\n<b>https://graph.org/{page['path']}</b>",
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton(text="Open Link", url=f"https://graph.org/{page['path']}"),
+                 InlineKeyboardButton(text="Share Link", url=f"https://telegram.me/share/url?url=https://graph.org/{page['path']}")],
+                [InlineKeyboardButton(text="✗ Close ✗", callback_data="close")]
+            ])
+        )
 
     except Exception as e:
         print(e)
