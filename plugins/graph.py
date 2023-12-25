@@ -1,56 +1,37 @@
 import os
-from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from plugins.utils import get_file_id
 from telegraph import upload_file, Telegraph
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-DOWNLOAD_LOCATION = os.environ.get("DOWNLOAD_LOCATION", "./Downloads/")
+@Client.on_message(filters.private & (filters.photo | filters.video))
+async def direct_upload(bot, update):
+    text = await update.reply_text(text="<b>Downloading to My Server ...</b>", disable_web_page_preview=True)
+    media = await update.download()
 
-@Client.on_message(filters.media & filters.private)
-async def getmedia(bot, message):
-    medianame = DOWNLOAD_LOCATION + str(message.from_user.id)
+    await text.edit_text(text="<b>Downloading Completed. Now I am Uploading to graph.org Link...</b>", disable_web_page_preview=True)
+
     try:
-        reply_message = await message.reply_text(
-            text="**Processing...**",
-            quote=True,
-            disable_web_page_preview=True
-        )
-        await bot.download_media(
-            message=message,
-            file_name=medianame
-        )
-        starbots = upload_file(medianame)
-        try:
-            os.remove(medianame)
-        except Exception as remove_error:
-            print(remove_error)
+        response = upload_file(media)
     except Exception as error:
         print(error)
-        text = f"**Error :-** <code>{error}</code>"
-        reply_markup = InlineKeyboardMarkup(
-            [[
-                InlineKeyboardButton('More Help', callback_data='help')
-            ]]
-        )
-        await reply_message.edit_text(
-            text=text,
-            disable_web_page_preview=True,
-            reply_markup=reply_markup
-        )
+        await text.edit_text(text=f"**Error :- {error}**", disable_web_page_preview=True)
         return
 
-    text = f"**Link :- https://graph.org{starbots[0]}**\n\n**Join :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**"
-    reply_markup = InlineKeyboardMarkup(
-        [[
-            InlineKeyboardButton(text="Open Link", url=f"https://graph.org{starbots[0]}"),
-            InlineKeyboardButton(text="Share Link", url=f"https://telegram.me/share/url?url=https://graph.org{starbots[0]}")
-        ], [
-            InlineKeyboardButton(text="Join Updates Channel", url="https://t.me/Star_Bots_Tamil")
-        ]]
-    )
-    await reply_message.edit_text(
-        text=text,
-        disable_web_page_preview=False,
-        reply_markup=reply_markup
+    try:
+        os.remove(media)
+    except Exception as error:
+        print(error)
+        return
+
+    await text.edit_text(
+        text=f"<b>Your Photo or Video Link :-</b>\n\n<b>https://graph.org{response[0]}</b>",
+        disable_web_page_preview=True,
+        reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton(text="Open Link", url=f"https://graph.org{response[0]}"),
+             InlineKeyboardButton(text="Share Link", url=f"https://telegram.me/share/url?url=https://graph.org{response[0]}")],
+            [InlineKeyboardButton(text="✗ Close ✗", callback_data="close")]
+        ])
     )
 
 @Client.on_message(filters.text & filters.private)
