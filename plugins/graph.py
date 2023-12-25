@@ -1,5 +1,4 @@
 import os
-from plugins.utils import get_file_id
 from telegraph import upload_file, Telegraph
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
