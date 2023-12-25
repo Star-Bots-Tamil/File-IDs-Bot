@@ -5,16 +5,16 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 @Client.on_message(filters.private & (filters.photo | filters.video))
 async def direct_upload(bot, update):
-    text = await update.reply_text(text="<b>Downloading to My Server ...</b>", disable_web_page_preview=True)
+    text = await update.reply_text(text="<b>Downloading to My Server ...</b>", quote=True)
     media = await update.download()
 
-    await text.edit_text(text="<b>Downloading Completed. Now I am Uploading to graph.org Link...</b>", disable_web_page_preview=True)
+    await text.edit_text(text="<b>Downloading Completed. Now I am Uploading to graph.org Link...</b>", quote=True)
 
     try:
         response = upload_file(media)
     except Exception as error:
         print(error)
-        await text.edit_text(text=f"**Error :- {error}**", disable_web_page_preview=True)
+        await text.edit_text(text=f"**Error :- {error}**", quote=True)
         return
 
     try:
@@ -25,7 +25,7 @@ async def direct_upload(bot, update):
 
     await text.edit_text(
         text=f"<b>Your Photo or Video Link :-</b>\n\n<b>https://graph.org{response[0]}</b>",
-        disable_web_page_preview=True,
+        quote=True,
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton(text="Open Link", url=f"https://graph.org{response[0]}"),
              InlineKeyboardButton(text="Share Link", url=f"https://telegram.me/share/url?url=https://graph.org{response[0]}")],
