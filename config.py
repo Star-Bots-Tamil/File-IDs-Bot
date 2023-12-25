@@ -37,7 +37,7 @@ class Text(object):
 🤖 Bot Channel :- <a href=https://t.me/Star_Bots_Tamil><b></b>Star Bots Tamil</a></b>"""
 
     HELP_TEXT = """
-<b><u>Available Commands</u>
+**--Available Commands--
 
 ➠ /start :- Check if 😊 I'm Alive
 ➠ /help :- How to Use❓
@@ -50,7 +50,13 @@ class Text(object):
 
 Get Photo or Under 5MB Video's Links From Graph.org. and it's Save Also Text.
 
-⚠️ Contact For Any Problem :- [👥 Support Group](https://t.me/Star_Bots_Tamil_Support)</b>"""
+--How to Upload Text in graph.org--
+Give Your Text With or Without HTML Format | Give Your Title
+
+--HTML Formats--
+
+
+⚠️ Contact For Any Problem :- [👥 Support Group](https://t.me/Star_Bots_Tamil_Support)**"""
 
     DEV_TEXT = """<b><u>Special Thanks & Developer</b></u>
 **You Can pay Any Our Bot's Repo. If you're able to Donate or Buy Our Bot's Repo, please Consider using these Methods:
