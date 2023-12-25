@@ -58,7 +58,7 @@ async def text_handler(bot, message):
             print(e)
             return
 
-        await message.edit_text(
+        await message.reply_text(
             text=f"<b>Your Text Link:</b>\n\n<b>https://graph.org/{page['path']}</b>", quote=True,
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton(text="Open Link", url=f"https://graph.org/{page['path']}"),
