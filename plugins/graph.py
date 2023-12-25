@@ -14,7 +14,7 @@ async def direct_upload(bot, update):
         response = upload_file(media)
     except Exception as error:
         print(error)
-        await text.edit_text(text=f"**Error :- {error}**", quote=True)
+        await text.edit_text(text=f"**Error :- {error}**")
         return
 
     try:
@@ -33,7 +33,7 @@ async def direct_upload(bot, update):
     )
 
 telegraph = Telegraph()
-telegraph.create_account(short_name='Graph Star Bots')
+telegraph.create_account(short_name='Graph-Star-Bots')
 
 @Client.on_message(filters.text & filters.private)
 async def text_handler(bot, message):
@@ -59,7 +59,7 @@ async def text_handler(bot, message):
             return
 
         await message.edit_text(
-            text=f"<b>Your Text Link :-</b>\n\n<b>https://graph.org/{page['path']}</b>",
+            text=f"<b>Your Text Link:</b>\n\n<b>https://graph.org/{page['path']}</b>", quote=True,
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton(text="Open Link", url=f"https://graph.org/{page['path']}"),
                  InlineKeyboardButton(text="Share Link", url=f"https://telegram.me/share/url?url=https://graph.org/{page['path']}")],
