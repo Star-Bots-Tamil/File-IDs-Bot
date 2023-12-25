@@ -1,5 +1,5 @@
 import random
-from pyrogram import Client, filters
+from pyrogram import Client, filters, enums
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ForceReply, CallbackQuery
 from database.database import db
 from config import Config, Text  
@@ -86,6 +86,7 @@ async def cb_handler(client, query: CallbackQuery):
     elif data == "help":
         await query.message.edit_text(
             text=Text.HELP_TEXT,
+            parse_mode=enums.ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[
                 #⚠️ don't change source code & source link ⚠️ #
