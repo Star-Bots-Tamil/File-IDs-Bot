@@ -32,21 +32,23 @@ async def direct_upload(bot, update):
         ])
     )
 
+telegraph = Telegraph()
+telegraph.create_account(short_name='Graph Bots Tamil')
+
 @Client.on_message(filters.text & filters.private)
 async def text_handler(bot, message):
     try:
-        telegraph = Telegraph()
-        new_user = telegraph.create_account(short_name='1337')
-        auth_url = new_user["auth_url"]
         title = message.from_user.first_name
         content = message.text
+
         if '|' in message.text:
             content, title = message.text.split('|', 1)
+
         content = content.replace("\n", "<br>")
         author_url = f'https://telegram.dog/{message.from_user.username}' if message.from_user.username else None
 
         try:
-            starbots = Telegraph().create_page(
+            page = telegraph.create_page(
                 title=title,
                 html_content=content,
                 author_name=str(message.from_user.first_name),
@@ -54,8 +56,9 @@ async def text_handler(bot, message):
             )
         except Exception as e:
             print(e)
+            return
 
-        await message.reply_text("**https://graph.org/{}**".format(starbots["path"]))
+        await message.reply_text(f"**https://telegra.ph/{page['path']}**")
 
     except Exception as e:
         print(e)
