@@ -24,7 +24,7 @@ class Config(object):
 
 class Text(object):
     # part of text configuration
-    START_TEXT = """<b>Hello 👋🏻 {} ❤️,\nI'm An Star Bots Tamil's Official File ID Bot. This is An Advanced File ID Bot.\n➠ For More Details Check /help\n\nMaintenance By :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)</b>"""
+    START_TEXT = """<b>Hello 👋🏻 {} ❤️,\nI'm An Star Bots Tamil's Official File ID Bot.\n\n➠ For More Details Check /help\n\n©️ Maintenance By :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)</b>"""
 
     ABOUT_TEXT = """<b>🤖 My Name :- {}\n
 🧑🏻‍💻 Developer :- <a href=https://t.me/TG_Karthik><b>Karthik</b></a>\n
@@ -42,6 +42,7 @@ class Text(object):
 ➠ /start :- Check if 😊 I'm Alive
 ➠ /help :- How to Use❓
 ➠ /about :- to Know About Me 😌
+➠ /info :- Get Information About a User 🪪
 ➠ /stats :- Total Users 📊
 ➠ /ban :- Ban a User 🚫
 ➠ /unban :- Unban a User 😁
