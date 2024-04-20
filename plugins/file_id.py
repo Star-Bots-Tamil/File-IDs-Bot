@@ -23,7 +23,7 @@ async def handle_new_user_text(bot, message: Message):
 @Client.on_message(filters.video)
 async def handle_video(bot, message: Message):
     # Handle video message
-    await message.reply_text(f"Video file ID: {message.video.file_id}")
+    await message.reply_text(f"**Video File ID :- `{message.video.file_id}`\n\n**", quote=true)
 
 @Client.on_message(filters.sticker)
 async def handle_sticker(bot, message: Message):
