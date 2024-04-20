@@ -1,11 +1,16 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from iso639 import languages
+
+async def get_language_name(language_code):
+    try:
+        language_name = await Client.get_language_name(language_code)
+        return language_name
+    except Exception as e:
+        return f"Error: {e}"
 
 @Client.on_message(filters.private & filters.text & ~filters.forwarded)
 async def handle_new_user_text(bot, message: Message):
-    language_name = languages.get(part1=message.from_user.language_code).name
-    language_name = new_user_info["language_name"]
+    language_name = await get_language_name(message.from_user.language_code)
     chat_type_str = {
         pyrogram.enums.ChatType.PRIVATE: "🔐 Private",
         pyrogram.enums.ChatType.GROUP: "🗨️ Group",
