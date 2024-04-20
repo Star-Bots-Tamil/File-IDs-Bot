@@ -50,7 +50,7 @@ class Text(object):
 
 **Here's how to Use this Bot:**
 
---Send any of the following types of messages to get its File ID--
+--Send any of the Following Types of messages to get its File ID--
   🎥 Video
   🛂 Sticker
   🖼️ Photo
