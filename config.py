@@ -48,21 +48,15 @@ class Text(object):
 ➠ /banned :- Total Banned Users 🤕
 ➠ /broadcast :- to Broadcast 💌 a Message to All Users
 
-Get Photo or Under 5MB Video's Links From Graph.org. and it's Save Also Text.
+**Here's how to use this Bot:**
 
---How to Upload Text in graph.org--
-Give Your Text With or Without HTML Format | Give Your Title.
-Example :- `<b>We're Creating New Bots and Publish Bots For Our Channel. Our Bots Totally Free For Users</b> | Star Bots Tamil`
-
---HTML Formats--**
-**Bold :-** <b>**Bold Text**</b>
-__Italic__ **:-** <i>__Italic Text__</i>
-`Mono` **:-** <code>`Monospace Text`</code>
-~~Strikethrough~~ **:-** <s>~~Strikethrough Text~~</s>
-**Quote :-** <blockquote>Quote Text</blockquote>
---Underline-- **:-** <u>--Underlined Text--</u>
-[Create Link](https://t.me/Star_Bots_Tamil) **:-** <a href='https://t.me/Star_Bots_Tamil'>Star Bots Tamil</a>
-**Regular Text :-** Star Bots Tamil
+- Send any of the following types of messages to get its file ID:
+  - Video
+  - Sticker
+  - Photo
+  - Voice
+  - Audio
+  - Document**
 
 **⚠️ Contact For Any Problem :- [👥 Support Group](https://t.me/Star_Bots_Tamil_Support)**"""
 
