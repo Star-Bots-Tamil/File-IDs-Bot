@@ -1,23 +1,14 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
+from iso639 import languages
 
 @Client.on_message(filters.private & filters.text & ~filters.forwarded)
 async def handle_new_user_text(bot, message: Message):
-    new_user_info = {
-        "id": ,      
-        "is_bot": ,
-        "first_name": ,
-        "username": ,
-        "language_code": message.from_user.language_code
-    }
-    chat_info = {
-        "id": message.chat.id,
-        "type": message.chat.type,
-        "username": message.chat.username,
-        "first_name": message.chat.first_name
-    }
-    info_text = f"User Info:\n\n👦🏻 User ID :- {message.from_user.id}\n🤖 Is Bot:- {message.from_user.is_bot}\n💳 Name :- {message.from_user.first_name}\n📛 Username :- {message.from_user.username}\n🔠 Language :-\nChat Info:\n\n{chat_info}"
-    await message.reply_text(info_text)
+    language_name = languages.get(part1=message.from_user.language_code).name
+    language_name = new_user_info["language_name"]
+    
+    info_text = f"**User Info :-\n\n👦🏻 User ID :- {message.from_user.id}\n🤖 Is Bot:- {message.from_user.is_bot}\n💳 Name :- {message.from_user.first_name}\n📛 Username :- {message.from_user.username}\n\n🔠 Language :- {language_name}\n\nChat Info :-\n\n🆔 Chat ID :- {message.chat.id}\n🗨️ Chat Type :- {message.chat.type}\n📛 Chat Username :-  {message.chat.username}\n💳 Chat Name :- {message.chat.first_name}\n\n©️ [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**"
+    await message.reply_text(info_text, quote=true)
 
 # Define handlers for different types of messages
 @Client.on_message(filters.video)
