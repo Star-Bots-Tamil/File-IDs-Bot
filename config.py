@@ -48,9 +48,10 @@ class Text(object):
 ➠ /banned :- Total Banned Users 🤕
 ➠ /broadcast :- to Broadcast 💌 a Message to All Users
 
-**Here's how to Use this Bot:**
+Here's how to Use this Bot:
 
 --Send any of the Following Types of messages to get its File ID--
+
   🎥 Video
   🛂 Sticker
   🖼️ Photo
