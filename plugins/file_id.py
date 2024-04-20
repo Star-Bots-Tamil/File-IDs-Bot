@@ -191,6 +191,9 @@ language_names = {
 
 @Client.on_message(filters.private & filters.text & ~filters.forwarded)
 async def handle_new_user_text(bot, message: Message):
+    button = InlineKeyboardMarkup([[
+        InlineKeyboardButton('🔒 Close', callback_data='close')
+    ]])
     language_name = language_names.get(message.from_user.language_code, "Unknown")
     chat_type_str = {
         enums.ChatType.PRIVATE: "🔐 Private",
@@ -199,7 +202,7 @@ async def handle_new_user_text(bot, message: Message):
         enums.ChatType.CHANNEL: "📡 Channel"
     }.get(message.chat.type, "🫴🏻 Unknown")
     info_text = f"**--User Info :---\n\n👦🏻 User ID :- `{message.from_user.id}`\n🤖 Is Bot :- {message.from_user.is_bot}\n💳 Name :- {message.from_user.first_name}\n📛 Username :- @{message.from_user.username}\n🔠 Language :- {language_name}\n\n--Chat Info :---\n\n🆔 Chat ID :- `{message.chat.id}`\n🗨️ Chat Type :- {chat_type_str}\n📛 Chat Username :- @{message.chat.username}\n💳 Chat Name :- {message.chat.first_name}\n\n©️ [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**"
-    await message.reply_text(info_text, quote=True)
+    await message.reply_text(info_text, quote=True, reply_markup=button)
 
 # Define handlers for different types of messages
 @Client.on_message(filters.video)
