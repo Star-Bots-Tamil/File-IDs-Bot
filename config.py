@@ -24,7 +24,7 @@ class Config(object):
 
 class Text(object):
     # part of text configuration
-    START_TEXT = """<b>Hello 👋🏻 {} ❤️,\nI'm An Star Bots Tamil's Official Graph Bot. This is An Advanced Graph Bot.\n➠ For More Details Check /help\n\nMaintenance By :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)</b>"""
+    START_TEXT = """<b>Hello 👋🏻 {} ❤️,\nI'm An Star Bots Tamil's Official Graph Bot. This is An Advanced Get File ID Bot.\n➠ For More Details Check /help\n\nMaintenance By :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)</b>"""
 
     ABOUT_TEXT = """<b>🤖 My Name :- {}\n
 🧑🏻‍💻 Developer :- <a href=https://t.me/TG_Karthik><b>Karthik</b></a>\n
@@ -48,15 +48,15 @@ class Text(object):
 ➠ /banned :- Total Banned Users 🤕
 ➠ /broadcast :- to Broadcast 💌 a Message to All Users
 
-**Here's how to use this Bot:**
+**Here's how to Use this Bot:**
 
-- Send any of the following types of messages to get its file ID:
-  - Video
-  - Sticker
-  - Photo
-  - Voice
-  - Audio
-  - Document**
+--Send any of the following types of messages to get its File ID--
+  🎥 Video
+  🛂 Sticker
+  🖼️ Photo
+  🎤 Voice
+  🔊 Audio
+  📂 Document**
 
 **⚠️ Contact For Any Problem :- [👥 Support Group](https://t.me/Star_Bots_Tamil_Support)**"""
 
