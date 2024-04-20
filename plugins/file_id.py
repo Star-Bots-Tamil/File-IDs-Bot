@@ -191,7 +191,7 @@ language_names = {
 
 @Client.on_message(filters.private & filters.text & ~filters.forwarded)
 async def handle_new_user_text(bot, message: Message):
-    language_name = await get_language_name(message.from_user.language_code)
+    language_name = language_names.get(message.from_user.language_code, "Unknown")
     chat_type_str = {
         enums.ChatType.PRIVATE: "🔐 Private",
         enums.ChatType.GROUP: "🗨️ Group",
