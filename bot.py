@@ -10,7 +10,7 @@ class Bot(Client):
 
     def __init__(self):
         super().__init__(
-            name="Graph-Bot",
+            name="File-IDs-Bot",
             api_id=Config.API_ID,
             api_hash=Config.API_HASH,
             bot_token=Config.BOT_TOKEN,
