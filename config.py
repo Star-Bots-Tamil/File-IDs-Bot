@@ -6,7 +6,7 @@ class Config(object):
     # star bots client config
     API_ID    = os.environ.get("API_ID", "11973721")
     API_HASH  = os.environ.get("API_HASH", "5264bf4663e9159565603522f58d3c18")
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "6353181790:AAEAcX6-7J9J8_e15R7_9GFz6ceb-PTvEY0") 
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "6353181790:AAEppoFnz3s2etaj5HQxPz0-D2VY7rqUa0k") 
    
     # database config
     DATABASE_NAME = os.environ.get("DATABASE_NAME","File-ID-Star-Bot") # Bot Username  
