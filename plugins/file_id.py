@@ -206,7 +206,7 @@ async def handle_new_user_text(bot, message: Message):
     await message.reply_text(info_text, quote=True, reply_markup=button)
 
 # Define handlers for different types of messages
-@Client.on_message(filters.video)
+@Client.on_message(filters.private & filters.video)
 async def handle_video(bot, message: Message):
     button = InlineKeyboardMarkup([[
         InlineKeyboardButton('🔒 Close', callback_data='close')
@@ -214,7 +214,7 @@ async def handle_video(bot, message: Message):
     # Handle video message
     await message.reply_text(f"**File ID Genrated Successfully..!\n\nVideo's File ID :- `{message.video.file_id}`\n\n©️ [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**", quote=True, reply_markup=button)
 
-@Client.on_message(filters.sticker)
+@Client.on_message(filters.private & filters.sticker)
 async def handle_sticker(bot, message: Message):
     button = InlineKeyboardMarkup([[
         InlineKeyboardButton('🔒 Close', callback_data='close')
@@ -222,7 +222,7 @@ async def handle_sticker(bot, message: Message):
     # Handle sticker message
     await message.reply_text(f"**File ID Genrated Successfully..!\n\nSticker's File ID :- `{message.sticker.file_id}`\n\n©️ [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**", quote=True, reply_markup=button)
 
-@Client.on_message(filters.photo)
+@Client.on_message(filters.private & filters.photo)
 async def handle_photo(bot, message: Message):
     button = InlineKeyboardMarkup([[
         InlineKeyboardButton('🔒 Close', callback_data='close')
@@ -230,7 +230,7 @@ async def handle_photo(bot, message: Message):
     # Handle photo message
     await message.reply_text(f"**File ID Genrated Successfully..!\n\nPhoto's File ID :- `{message.photo.file_id}`\n\n©️ [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**", quote=True, reply_markup=button)
 
-@Client.on_message(filters.document)
+@Client.on_message(filters.private & filters.document)
 async def handle_document(bot, message: Message):
     button = InlineKeyboardMarkup([[
         InlineKeyboardButton('🔒 Close', callback_data='close')
@@ -239,7 +239,7 @@ async def handle_document(bot, message: Message):
     await message.reply_text(f"**File ID Genrated Successfully..!\n\nDocument's File ID :- `{message.document.file_id}`\n\n©️ [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**", quote=True, reply_markup=button)
 
 # Define handlers for voice and audio messages
-@Client.on_message(filters.voice)
+@Client.on_message(filters.private & filters.voice)
 async def handle_voice(bot, message: Message):
     button = InlineKeyboardMarkup([[
         InlineKeyboardButton('🔒 Close', callback_data='close')
@@ -247,7 +247,7 @@ async def handle_voice(bot, message: Message):
     # Handle voice message
     await message.reply_text(f"**File ID Genrated Successfully..!\n\nVoice's File ID :- `{message.voice.file_id}`\n\n©️ [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**", quote=True, reply_markup=button)
 
-@Client.on_message(filters.audio)
+@Client.on_message(filters.private & filters.audio)
 async def handle_audio(bot, message: Message):
     button = InlineKeyboardMarkup([[
         InlineKeyboardButton('🔒 Close', callback_data='close')
